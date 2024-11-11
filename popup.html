@@ -5,7 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Feedback Popup</title>
     <style>
-        /* Basic styles for the popup */
+        /* Full-page background style */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('boardgame.png'); /* Background image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* Popup container, initially hidden */
         .popup-container {
             display: none; /* Hidden by default */
             position: fixed;
@@ -13,12 +27,13 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background overlay */
             justify-content: center;
             align-items: center;
             z-index: 1000;
         }
         
+        /* Popup content styling */
         .popup-content {
             background-color: #fff;
             padding: 20px;
@@ -28,12 +43,14 @@
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
         }
         
+        /* Logo styling */
         .popup-logo {
             width: 50px; /* Small size for the logo */
             height: auto;
             margin-bottom: 15px;
         }
         
+        /* Button styling */
         .popup-buttons {
             margin-top: 15px;
         }
@@ -85,9 +102,9 @@
         document.getElementById("feedbackPopup").style.display = "none";
     }
     
-    // Show the popup after a certain time or action
+    // Show the popup after 3 seconds
     window.onload = function() {
-        setTimeout(showPopup, 2000); // Show popup after 2 seconds
+        setTimeout(showPopup, 3000); // Show popup after 3 seconds
     };
 </script>
 
